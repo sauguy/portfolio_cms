@@ -1,4 +1,6 @@
 class Element
+  ##
+  # This class represents a link element
   class Link < ApplicationRecord
     belongs_to :element
 

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>development.log - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../app/assets/config/manifest_js.html">manifest.js</a>
+  
+    <li><a href="../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../app/assets/javascripts/cable_js.html">cable.js</a>
+  
+    <li><a href="../app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../config_ru.html">config.ru</a>
+  
+    <li><a href="../log/development_log.html">development.log</a>
+  
+    <li><a href="../log/test_log.html">test.log</a>
+  
+    <li><a href="../public/404_html.html">404.html</a>
+  
+    <li><a href="../public/422_html.html">422.html</a>
+  
+    <li><a href="../public/500_html.html">500.html</a>
+  
+    <li><a href="../public/apple-touch-icon-precomposed_png.html">apple-touch-icon-precomposed.png</a>
+  
+    <li><a href="../public/apple-touch-icon_png.html">apple-touch-icon.png</a>
+  
+    <li><a href="../public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="../public/robots_txt.html">robots</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page log/development.log">
+
+<pre>[1m[35m (21.5ms)[0m  [1m[35mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL PRIMARY KEY)[0m
+[1m[35m (21.1ms)[0m  [1m[35mCREATE TABLE &quot;ar_internal_metadata&quot; (&quot;key&quot; varchar NOT NULL PRIMARY KEY, &quot;value&quot; varchar, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElements.html">CreateElements</a>
+(20180401112841)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE &quot;elements&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;weight&quot; integer, &quot;type&quot; text, &quot;block_id&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401112841&quot;]]
+[1m[35m (13.2ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreateBlocks.html">CreateBlocks</a>
+(20180401114252)</p>
+
+<pre>[1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE &quot;blocks&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;page_id&quot; integer, &quot;weight&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114252&quot;]]
+[1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE &quot;pages&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;path&quot; text, &quot;type&quot; text, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO &quot;ar_internal_metadata&quot; (&quot;key&quot;, &quot;value&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;value&quot;, &quot;development&quot;], [&quot;created_at&quot;, &quot;2018-04-01 12:17:49.539900&quot;], [&quot;updated_at&quot;, &quot;2018-04-01 12:17:49.539900&quot;]]
+[1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (1.1ms)[0m  [1m[35mDROP TABLE &quot;pages&quot;[0m
+[1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (1.6ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE &quot;pages&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;path&quot; varchar, &quot;type&quot; varchar, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.3ms)[0m  [1m[35mDROP TABLE &quot;pages&quot;[0m
+[1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateBlocks.html">CreateBlocks</a>
+(20180401114252)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (1.2ms)[0m  [1m[35mDROP TABLE &quot;blocks&quot;[0m
+[1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401114252&quot;]]
+[1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElements.html">CreateElements</a>
+(20180401112841)</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.9ms)[0m  [1m[35mDROP TABLE &quot;elements&quot;[0m
+[1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401112841&quot;]]
+[1m[35m (5.9ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElements.html">CreateElements</a>
+(20180401112841)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE &quot;elements&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;weight&quot; integer, &quot;type&quot; varchar, &quot;text&quot; varchar, &quot;block_id&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401112841&quot;]]
+[1m[35m (9.5ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreateBlocks.html">CreateBlocks</a>
+(20180401114252)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE &quot;blocks&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;page_id&quot; integer, &quot;weight&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114252&quot;]]
+[1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE &quot;pages&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;path&quot; varchar, &quot;type&quot; varchar, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.8ms)[0m  [1m[35mDROP TABLE &quot;pages&quot;[0m
+[1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateBlocks.html">CreateBlocks</a>
+(20180401114252)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (4.5ms)[0m  [1m[35mDROP TABLE &quot;blocks&quot;[0m
+[1m[35mSQL (0.1ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401114252&quot;]]
+[1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElements.html">CreateElements</a>
+(20180401112841)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (1.1ms)[0m  [1m[35mDROP TABLE &quot;elements&quot;[0m
+[1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401112841&quot;]]
+[1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElements.html">CreateElements</a>
+(20180401112841)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE &quot;elements&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;weight&quot; integer, &quot;type&quot; varchar, &quot;block_id&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401112841&quot;]]
+[1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreateBlocks.html">CreateBlocks</a>
+(20180401114252)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE &quot;blocks&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;page_id&quot; integer, &quot;weight&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114252&quot;]]
+[1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE &quot;pages&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;path&quot; varchar, &quot;type&quot; varchar, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (18.9ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mElement Load (1.5ms)[0m  [1m[34mSELECT &quot;elements&quot;.* FROM &quot;elements&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (5.6ms)[0m  [1m[35mDROP TABLE &quot;pages&quot;[0m
+[1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateBlocks.html">CreateBlocks</a>
+(20180401114252)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (1.1ms)[0m  [1m[35mDROP TABLE &quot;blocks&quot;[0m
+[1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401114252&quot;]]
+[1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElements.html">CreateElements</a>
+(20180401112841)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.9ms)[0m  [1m[35mDROP TABLE &quot;elements&quot;[0m
+[1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401112841&quot;]]
+[1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElements.html">CreateElements</a>
+(20180401112841)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE &quot;elements&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;weight&quot; integer, &quot;block_id&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401112841&quot;]]
+[1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreateBlocks.html">CreateBlocks</a>
+(20180401114252)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE &quot;blocks&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;page_id&quot; integer, &quot;weight&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114252&quot;]]
+[1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE &quot;pages&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;path&quot; varchar, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[34mSELECT &quot;ar_internal_metadata&quot;.&quot;value&quot; FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ?[0m  [[&quot;key&quot;, &quot;environment&quot;]]
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.0ms)[0m  [1m[34mSELECT &quot;ar_internal_metadata&quot;.&quot;value&quot; FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ?[0m  [[&quot;key&quot;, &quot;environment&quot;]]
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.0ms)[0m  [1m[34mSELECT &quot;ar_internal_metadata&quot;.&quot;value&quot; FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ?[0m  [[&quot;key&quot;, &quot;environment&quot;]]
+[1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL PRIMARY KEY)[0m
+[1m[35m (21.4ms)[0m  [1m[35mCREATE TABLE &quot;ar_internal_metadata&quot; (&quot;key&quot; varchar NOT NULL PRIMARY KEY, &quot;value&quot; varchar, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElements.html">CreateElements</a>
+(20180401112841)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE &quot;elements&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;weight&quot; integer, &quot;block_id&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401112841&quot;]]
+[1m[35m (26.1ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreateBlocks.html">CreateBlocks</a>
+(20180401114252)</p>
+
+<pre>[1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE &quot;blocks&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;page_id&quot; integer, &quot;weight&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114252&quot;]]
+[1m[35m (20.5ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE &quot;pages&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;path&quot; varchar, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (19.4ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO &quot;ar_internal_metadata&quot; (&quot;key&quot;, &quot;value&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;value&quot;, &quot;development&quot;], [&quot;created_at&quot;, &quot;2018-04-01 15:29:07.097251&quot;], [&quot;updated_at&quot;, &quot;2018-04-01 15:29:07.097251&quot;]]
+[1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[34mSELECT &quot;ar_internal_metadata&quot;.&quot;value&quot; FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ?[0m  [[&quot;key&quot;, &quot;environment&quot;]]
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.0ms)[0m  [1m[34mSELECT &quot;ar_internal_metadata&quot;.&quot;value&quot; FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ?[0m  [[&quot;key&quot;, &quot;environment&quot;]]
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.1ms)[0m  [1m[34mSELECT &quot;ar_internal_metadata&quot;.&quot;value&quot; FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ?[0m  [[&quot;key&quot;, &quot;environment&quot;]]
+[1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; varchar NOT NULL PRIMARY KEY)[0m
+[1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE &quot;ar_internal_metadata&quot; (&quot;key&quot; varchar NOT NULL PRIMARY KEY, &quot;value&quot; varchar, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElements.html">CreateElements</a>
+(20180401112841)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE &quot;elements&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;weight&quot; integer, &quot;block_id&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401112841&quot;]]
+[1m[35m (11.8ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreateBlocks.html">CreateBlocks</a>
+(20180401114252)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE &quot;blocks&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;page_id&quot; integer, &quot;weight&quot; integer, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114252&quot;]]
+[1m[35m (22.5ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to <a href="../CreatePages.html">CreatePages</a> (20180401114611)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE &quot;pages&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;path&quot; varchar, &quot;created_at&quot; datetime NOT NULL, &quot;updated_at&quot; datetime NOT NULL)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401114611&quot;]]
+[1m[35m (15.0ms)[0m  [1m[36mcommit transaction[0m</pre>
+
+<p>Migrating to CreateLinks (20180401155726)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE &quot;links&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;title&quot; varchar, &quot;target&quot; varchar, &quot;img&quot; varchar, &quot;description&quot; text, &quot;element_id&quot; integer)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401155726&quot;]]
+[1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+[1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO &quot;ar_internal_metadata&quot; (&quot;key&quot;, &quot;value&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES (?, ?, ?, ?)[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;value&quot;, &quot;development&quot;], [&quot;created_at&quot;, &quot;2018-04-01 16:06:57.550278&quot;], [&quot;updated_at&quot;, &quot;2018-04-01 16:06:57.550278&quot;]]
+[1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to CreateLinks (20180401155726)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.9ms)[0m  [1m[35mDROP TABLE &quot;links&quot;[0m
+[1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401155726&quot;]]
+[1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElementLinks.html">CreateElementLinks</a>
+(20180401155726)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE &quot;element_links&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;title&quot; varchar, &quot;target&quot; varchar, &quot;img&quot; varchar, &quot;description&quot; text, &quot;element_id&quot; integer)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401155726&quot;]]
+[1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElementLinks.html">CreateElementLinks</a>
+(20180401155726)</p>
+
+<pre>[1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (1.1ms)[0m  [1m[35mDROP TABLE &quot;element_links&quot;[0m
+[1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM &quot;schema_migrations&quot; WHERE &quot;schema_migrations&quot;.&quot;version&quot; = ?[0m  [[&quot;version&quot;, &quot;20180401155726&quot;]]
+[1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+
+<p>Migrating to <a href="../CreateElementLinks.html">CreateElementLinks</a>
+(20180401155726)</p>
+
+<pre>[1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE &quot;element_links&quot; (&quot;id&quot; INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, &quot;title&quot; varchar, &quot;target&quot; varchar, &quot;img&quot; varchar, &quot;description&quot; text, &quot;element_id&quot; integer)[0m
+[1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO &quot;schema_migrations&quot; (&quot;version&quot;) VALUES (?)[0m  [[&quot;version&quot;, &quot;20180401155726&quot;]]
+[1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  &quot;ar_internal_metadata&quot;.* FROM &quot;ar_internal_metadata&quot; WHERE &quot;ar_internal_metadata&quot;.&quot;key&quot; = ? LIMIT ?[0m  [[&quot;key&quot;, &quot;environment&quot;], [&quot;LIMIT&quot;, 1]]
+[1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+[1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+[1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://rdoc.github.io/rdoc">RDoc</a> 5.0.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
