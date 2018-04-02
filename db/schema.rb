@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402120037) do
+ActiveRecord::Schema.define(version: 20180402121602) do
 
   create_table "blocks", force: :cascade do |t|
     t.integer  "page_id"
     t.integer  "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["page_id"], name: "index_blocks_on_page_id"
   end
 
   create_table "element_links", force: :cascade do |t|
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 20180402120037) do
     t.string  "img"
     t.text    "description"
     t.integer "element_id"
+    t.index ["element_id"], name: "index_element_links_on_element_id"
   end
 
   create_table "elements", force: :cascade do |t|
@@ -32,6 +34,7 @@ ActiveRecord::Schema.define(version: 20180402120037) do
     t.integer  "block_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["block_id"], name: "index_elements_on_block_id"
   end
 
   create_table "pages", force: :cascade do |t|
