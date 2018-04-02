@@ -1,6 +1,12 @@
 FactoryBot.define do
+  factory :portfolio do
+    name 'Portfolio 1'
+    description 'Super portfolio'
+  end
+
   factory :page do
     path 'http://page.test'
+    portfolio
   end
 
   factory :block do
