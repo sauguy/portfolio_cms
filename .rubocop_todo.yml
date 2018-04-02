@@ -23,10 +23,7 @@ Style/Documentation:
     - 'app/helpers/application_helper.rb'
     - 'app/mailers/application_mailer.rb'
     - 'app/models/application_record.rb'
-    - 'db/migrate/20180401112841_create_elements.rb'
-    - 'db/migrate/20180401114252_create_blocks.rb'
-    - 'db/migrate/20180401114611_create_pages.rb'
-    - 'db/migrate/20180401155726_create_element_links.rb'
+    - 'db/migrate/**/*'
 
 # Offense count: 2
 Style/MixinUsage:
@@ -39,3 +36,18 @@ Style/MixinUsage:
 # URISchemes: http, https
 Metrics/LineLength:
   Max: 130
+
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'db/schema.rb'
+
+Style/NumericLiterals:
+  Exclude:
+    - 'db/schema.rb'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'db/schema.rb'
+Style/StringLiterals:
+  Exclude:
+    - 'db/schema.rb'
