@@ -10,34 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401155726) do
-
-  create_table "blocks", force: :cascade do |t|
-    t.integer  "page_id"
-    t.integer  "weight"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+ActiveRecord::Schema.define(version: 20_180_401_155_726) do
+  create_table 'blocks', force: :cascade do |t|
+    t.integer  'page_id'
+    t.integer  'weight'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "element_links", force: :cascade do |t|
-    t.string  "title"
-    t.string  "target"
-    t.string  "img"
-    t.text    "description"
-    t.integer "element_id"
+  create_table 'element_links', force: :cascade do |t|
+    t.string  'title'
+    t.string  'target'
+    t.string  'img'
+    t.text    'description'
+    t.integer 'element_id'
   end
 
-  create_table "elements", force: :cascade do |t|
-    t.integer  "weight"
-    t.integer  "block_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'elements', force: :cascade do |t|
+    t.integer  'weight'
+    t.integer  'block_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "pages", force: :cascade do |t|
-    t.string   "path"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'pages', force: :cascade do |t|
+    t.string   'path'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end
