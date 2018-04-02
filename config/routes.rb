@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'admin', to: 'admin#index'
+  get 'admin', to: 'admin/portfolio#index'
   namespace :admin do
-    resources :portfolio, :page, :block, :link
+    resources :portfolio, except: :index
+    resources :page, :block, :link
   end
 end

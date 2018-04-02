@@ -1,0 +1,27 @@
+<h1>Welcome to the admin interface</h1>
+
+<h2>Portfolios</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% portfolios.each do |portfolio| %>
+  <tr>
+    <td><%= portfolio.name %></td>
+    <td><%= portfolio.description %></td>
+    <td><%= link_to "Show", admin_portfolio_path(portfolio) %></td>
+    <td><%= link_to "Edit", edit_admin_portfolio_path(portfolio) %></td>
+    <td><%= link_to "Remove", "/admin/portfolio/#{portfolio.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br>
+
+<%= link_to 'New portfolio', new_admin_portfolio_path %>
