@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe Admin::PortfolioController do
-  let!(:portfolio) { FactoryBot.create(:portfolio) }
+describe Admin::Portfolios::PagesController do
+  let!(:page) { FactoryBot.create(:page) }
 
   describe 'GET #index' do
     before { get :index }
@@ -19,28 +19,28 @@ describe Admin::PortfolioController do
 
   describe 'POST #create' do
     let(:params) do
-      { portfolio: { name: 'P1', description: 'Description of P1' } }
+      { page: { name: 'P1', description: 'Description of P1' } }
     end
 
     before { post :create, params: params }
 
     it { is_expected.to redirect_to admin_path }
-    it 'should create a new portfolio' do
+    it 'should create a new page' do
       expect do
         post :create, params: params
-      end.to change(Portfolio, :count).by(+1)
+      end.to change(Page, :count).by(+1)
     end
   end
 
   describe 'GET #show' do
-    before { get :show, params: { id: portfolio } }
+    before { get :show, params: { id: page } }
 
     it { is_expected.to respond_with :ok }
     it { is_expected.to render_template :show }
   end
 
   describe 'GET #edit' do
-    before { get :edit, params: { id: portfolio } }
+    before { get :edit, params: { id: page } }
 
     it { is_expected.to respond_with :ok }
     it { is_expected.to render_template :edit }
@@ -48,36 +48,36 @@ describe Admin::PortfolioController do
 
   describe 'PUT #update' do
     let(:params) do
-      { id: portfolio,
-        portfolio: { name: 'New name',
-                     description: 'New description' } }
+      { id: page,
+        page: { name: 'New name',
+                description: 'New description' } }
     end
 
     before { put :update, params: params }
 
-    it { is_expected.to redirect_to edit_admin_portfolio_path(portfolio) }
-    it 'should update the portfolio' do
-      expect(find_portfolio.name).to eq params.dig(:portfolio, :name)
-      expect(find_portfolio.description)
-        .to eq params.dig(:portfolio, :description)
+    it { is_expected.to redirect_to edit_admin_page_path(page) }
+    it 'should update the page' do
+      expect(find_page.name).to eq params.dig(:page, :name)
+      expect(find_page.description)
+        .to eq params.dig(:page, :description)
     end
   end
 
-  def find_portfolio
-    Portfolio.find(portfolio.id)
+  def find_page
+    Page.find(page.id)
   end
 
   describe 'DELETE #destroy' do
-    it 'should delete the portfolio' do
+    it 'should delete the page' do
       expect do
-        delete :destroy, params: { id: portfolio }
-      end.to change(Portfolio, :count).by(-1)
+        delete :destroy, params: { id: page }
+      end.to change(Page, :count).by(-1)
     end
 
     describe 'redirection' do
-      let(:new_portfolio) { FactoryBot.create(:portfolio) }
+      let(:new_page) { FactoryBot.create(:page) }
 
-      before { delete :destroy, params: { id: new_portfolio } }
+      before { delete :destroy, params: { id: new_page } }
 
       it { is_expected.to redirect_to admin_path }
     end

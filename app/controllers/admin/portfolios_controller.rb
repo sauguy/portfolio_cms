@@ -1,5 +1,5 @@
 module Admin
-  class PortfolioController < ApplicationController
+  class PortfoliosController < ApplicationController
     def index
       render 'index', locals: { portfolios: portfolios }
     end
@@ -7,7 +7,7 @@ module Admin
     def new; end
 
     def create
-      Portfolio.create(filtered_params)
+      ::Portfolio.create(filtered_params)
       redirect_to admin_path
     end
 
@@ -32,11 +32,11 @@ module Admin
     private
 
     def portfolios
-      Portfolio.all
+      ::Portfolio.all
     end
 
     def portfolio
-      Portfolio.find(params['id'])
+      ::Portfolio.find(params['id'])
     end
 
     def filtered_params
