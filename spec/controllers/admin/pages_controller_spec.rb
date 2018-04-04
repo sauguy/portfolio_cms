@@ -1,17 +1,34 @@
 require 'rails_helper'
 
-describe Admin::Portfolios::PagesController do
+describe Admin::PagesController do
   let!(:page) { FactoryBot.create(:page) }
+  let(:portfolio_id) { page.portfolio_id }
 
   describe 'GET #index' do
-    before { get :index }
+    let!(:other_page) { FactoryBot.create(:page, path: 'http://new_path.test') }
+    context 'general scope' do
+      before { get :index }
 
-    it { is_expected.to respond_with :ok }
-    it { is_expected.to render_template :index }
+      it { is_expected.to respond_with :ok }
+      it { is_expected.to render_template :index }
+      it 'should display all the pages' do
+        assert_equal Page.all, assigns(:pages)
+      end
+    end
+
+    context 'portfolios scope' do
+      before { get :index, params: { portfolio_id: portfolio_id } }
+
+      it { is_expected.to respond_with :ok }
+      it { is_expected.to render_template :index }
+      it 'should display only the pages related to this portfolio' do
+        assert_equal Page.where(portfolio_id: portfolio_id), assigns(:pages)
+      end
+    end
   end
 
   describe 'GET #new' do
-    before { get :new }
+    before { get :new,  params: { portfolio_id: portfolio_id } }
 
     it { is_expected.to respond_with :ok }
     it { is_expected.to render_template :new }
@@ -19,7 +36,8 @@ describe Admin::Portfolios::PagesController do
 
   describe 'POST #create' do
     let(:params) do
-      { page: { name: 'P1', description: 'Description of P1' } }
+      { page: { path: 'P1' },
+        portfolio_id: portfolio_id }
     end
 
     before { post :create, params: params }
