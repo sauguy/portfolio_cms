@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Element
   ##
   # This class represents a link element

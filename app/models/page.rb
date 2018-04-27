@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ##
 # This class represents a page on a portfolio
 class Page < ApplicationRecord
