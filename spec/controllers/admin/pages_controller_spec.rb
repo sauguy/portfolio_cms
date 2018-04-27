@@ -36,8 +36,7 @@ describe Admin::PagesController do
 
   describe 'POST #create' do
     let(:params) do
-      { page: { path: 'P1' },
-        portfolio_id: portfolio_id }
+      { page: { path: 'P1', portfolio_id: portfolio_id } }
     end
 
     before { post :create, params: params }
@@ -67,17 +66,14 @@ describe Admin::PagesController do
   describe 'PUT #update' do
     let(:params) do
       { id: page,
-        page: { name: 'New name',
-                description: 'New description' } }
+        page: { path: 'other.path' } }
     end
 
     before { put :update, params: params }
 
     it { is_expected.to redirect_to edit_admin_page_path(page) }
     it 'should update the page' do
-      expect(find_page.name).to eq params.dig(:page, :name)
-      expect(find_page.description)
-        .to eq params.dig(:page, :description)
+      expect(find_page.path).to eq params.dig(:page, :path)
     end
   end
 

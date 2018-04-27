@@ -50,7 +50,7 @@ module Admin
     end
 
     def filtered_params
-      params[:page].permit(:path)
+      params[:page].permit(:path, :portfolio_id)
     end
   end
 end
