@@ -5,4 +5,21 @@
   <%= f.text_field(:description) %>
   <%= f.submit('Update') %>
 <% end %>
+
+<table>
+  <tr>
+    <th>Pages</th>
+    <th><%= link_to 'Create', new_admin_portfolio_page_path(portfolio) %></th>
+    <th></th>
+  </tr>
+
+<% portfolio.pages.each do |page| %>
+  <tr>
+    <td><%= page.name %></td>
+    <td><%= link_to "Edit", edit_admin_page_path(page) %></td>
+    <td><%= link_to "Remove", "/admin/pages/#{page.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
 <%= link_to 'Back', admin_path %>

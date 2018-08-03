@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180402121602) do
+ActiveRecord::Schema.define(version: 20180803100510) do
 
   create_table "blocks", force: :cascade do |t|
     t.integer  "page_id"
@@ -40,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180402121602) do
   end
 
   create_table "pages", force: :cascade do |t|
-    t.string   "path"
+    t.string   "name"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "portfolio_id"

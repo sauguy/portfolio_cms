@@ -3,9 +3,12 @@
 Rails.application.routes.draw do
   get 'admin', to: 'admin/portfolios#index'
   namespace :admin do
-    resources :portfolios
-    resources :pages
-    resources :blocks
-    resources :elements
+    resources :portfolios do
+      resources :pages, shallow: true do
+        resources :blocks, shallow: true do
+          resources :elements, shallow: true
+        end
+      end
+    end
   end
 end

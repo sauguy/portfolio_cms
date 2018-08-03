@@ -2,19 +2,13 @@
 
 module Admin
   class BlocksController < ApplicationController
-    def index
-      render 'index', locals: { blocks: blocks }
+    def new
+      render 'new', locals: { block: ::Block.new }
     end
-
-    def new; end
 
     def create
-      ::Block.create(filtered_params)
-      redirect_to admin_path
-    end
-
-    def show
-      render 'show', locals: { block: block }
+      ::Block.create(filtered_params.merge(page_id: params[:page_id]))
+      redirect_to edit_admin_page_path(params[:page_id])
     end
 
     def edit
@@ -27,8 +21,9 @@ module Admin
     end
 
     def destroy
+      page_id = block.page.id
       block.destroy
-      redirect_to admin_path
+      redirect_to edit_admin_page_path(page_id)
     end
 
     private

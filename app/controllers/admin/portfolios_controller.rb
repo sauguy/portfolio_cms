@@ -15,10 +15,6 @@ module Admin
       redirect_to admin_path
     end
 
-    def show
-      render 'show', locals: { portfolio: portfolio }
-    end
-
     def edit
       render 'edit', locals: { portfolio: portfolio }
     end
@@ -41,6 +37,10 @@ module Admin
 
     def portfolio
       ::Portfolio.find(params['id'])
+    end
+
+    def pages
+      @pages ||= portfolio.pages
     end
 
     def filtered_params

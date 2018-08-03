@@ -1,0 +1,5 @@
+<%= form_for(block, url: { action: :create }) do |f| %>
+  <%= label_tag(:name, 'Weight') %>
+  <%= f.text_field(:weight) %>
+  <%= submit_tag('Create') %>
+<% end %>

@@ -1,0 +1,20 @@
+<%= form_for(page, url: { action: :update }) do |f| %>
+  <%= label_tag(:name, 'Name') %>
+  <%= f.text_field(:name) %>
+  <%= f.submit('Update') %>
+<% end %>
+
+<table>
+  <tr>
+    <th>Blocks (<%= link_to 'New', new_admin_page_block_path(page) %>)</th>
+  </tr>
+<% page.ordered_blocks.each do |block| %>
+  <tr>
+    <td>
+      <%= render 'block', block: block %>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Back', edit_admin_portfolio_path(page.portfolio) %>

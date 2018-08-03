@@ -7,7 +7,7 @@ FactoryBot.define do
   end
 
   factory :page do
-    path 'http://page.test'
+    name 'page 1'
     portfolio
   end
 

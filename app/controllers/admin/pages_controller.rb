@@ -2,19 +2,13 @@
 
 module Admin
   class PagesController < ApplicationController
-    def index
-      render 'index', locals: { pages: pages }
+    def new
+      render 'new', locals: { page: ::Page.new }
     end
-
-    def new; end
 
     def create
-      ::Page.create(filtered_params)
-      redirect_to admin_path
-    end
-
-    def show
-      render 'show', locals: { page: page }
+      ::Page.create(filtered_params.merge(portfolio_id: params[:portfolio_id]))
+      redirect_to edit_admin_portfolio_path(params[:portfolio_id])
     end
 
     def edit
@@ -51,7 +45,7 @@ module Admin
     end
 
     def filtered_params
-      params[:page].permit(:path, :portfolio_id)
+      params[:page].permit(:name, :portfolio_id)
     end
   end
 end

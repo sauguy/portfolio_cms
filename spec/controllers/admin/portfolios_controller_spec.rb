@@ -34,13 +34,6 @@ describe Admin::PortfoliosController do
     end
   end
 
-  describe 'GET #show' do
-    before { get :show, params: { id: portfolio } }
-
-    it { is_expected.to respond_with :ok }
-    it { is_expected.to render_template :show }
-  end
-
   describe 'GET #edit' do
     before { get :edit, params: { id: portfolio } }
 

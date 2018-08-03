@@ -6,29 +6,6 @@ describe Admin::BlocksController do
   let!(:block) { FactoryBot.create(:block) }
   let(:page_id) { block.page_id }
 
-  describe 'GET #index' do
-    let!(:other_block) { FactoryBot.create(:block) }
-    context 'general scope' do
-      before { get :index }
-
-      it { is_expected.to respond_with :ok }
-      it { is_expected.to render_template :index }
-      it 'should display all the pages' do
-        assert_equal Block.all, assigns(:blocks)
-      end
-    end
-
-    context 'pages scope' do
-      before { get :index, params: { page_id: page_id } }
-
-      it { is_expected.to respond_with :ok }
-      it { is_expected.to render_template :index }
-      it 'should display only the blocks related to this page' do
-        assert_equal Block.where(page_id: page_id), assigns(:blocks)
-      end
-    end
-  end
-
   describe 'GET #new' do
     before { get :new,  params: { page_id: page_id } }
 
@@ -38,24 +15,17 @@ describe Admin::BlocksController do
 
   describe 'POST #create' do
     let(:params) do
-      { block: { weight: 1, page_id: page_id } }
+      { page_id: page_id, block: { weight: 1 } }
     end
 
     before { post :create, params: params }
 
-    it { is_expected.to redirect_to admin_path }
+    it { is_expected.to redirect_to edit_admin_page_path(page_id) }
     it 'should create a new block' do
       expect do
         post :create, params: params
       end.to change(Block, :count).by(+1)
     end
-  end
-
-  describe 'GET #show' do
-    before { get :show, params: { id: block } }
-
-    it { is_expected.to respond_with :ok }
-    it { is_expected.to render_template :show }
   end
 
   describe 'GET #edit' do
@@ -95,7 +65,7 @@ describe Admin::BlocksController do
 
       before { delete :destroy, params: { id: new_block } }
 
-      it { is_expected.to redirect_to admin_path }
+      it { is_expected.to redirect_to edit_admin_page_path(new_block.page.id) }
     end
   end
 end
