@@ -1,7 +1,7 @@
-<%= form_tag('/admin/portfolio') do %>
+<%= form_for(portfolio, url: {action: "create"}) do |f| %>
   <%= label_tag(:name, 'Name') %>
-  <%= text_field_tag(:name) %>
+  <%= f.text_field(:name) %>
   <%= label_tag(:name, 'Description') %>
-  <%= text_field_tag(:description) %>
+  <%= f.text_field(:description) %>
   <%= submit_tag('Create') %>
 <% end %>

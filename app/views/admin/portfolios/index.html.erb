@@ -17,7 +17,7 @@
     <td><%= portfolio.description %></td>
     <td><%= link_to "Show", admin_portfolio_path(portfolio) %></td>
     <td><%= link_to "Edit", edit_admin_portfolio_path(portfolio) %></td>
-    <td><%= link_to "Remove", "/admin/portfolio/#{portfolio.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to "Remove", "/admin/portfolios/#{portfolio.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

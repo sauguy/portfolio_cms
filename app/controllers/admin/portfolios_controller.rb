@@ -6,7 +6,9 @@ module Admin
       render 'index', locals: { portfolios: portfolios }
     end
 
-    def new; end
+    def new
+      render 'new', locals: { portfolio: ::Portfolio.new }
+    end
 
     def create
       ::Portfolio.create(filtered_params)
@@ -42,7 +44,7 @@ module Admin
     end
 
     def filtered_params
-      params[:portfolio].permit(:name, :description)
+      params.require(:portfolio).permit(:name, :description)
     end
   end
 end
