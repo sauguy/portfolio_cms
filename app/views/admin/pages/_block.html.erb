@@ -1,6 +1,6 @@
 <fieldset>
   <legend><%= link_to '(X)', "/admin/blocks/#{block.id}", method: :delete, data: { confirm: 'Are you sure?' } %><%= link_to "Block #{block.id}", edit_admin_block_path(block) %> (weight: <%= block.weight %>)</legend>
-  <%= link_to "Add element", new_admin_block_element_path(block) %>
+  <%= render 'new_element', block: block %>
   <table>
     <tr>
       <% block.elements.each do |element| %>

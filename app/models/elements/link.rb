@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-class Element
+module Elements
   ##
   # This class represents a link element
-  class Link < ApplicationRecord
+  class Link < ActiveRecord::Base
     belongs_to :element
 
     delegate :weight, to: :element

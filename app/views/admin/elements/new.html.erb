@@ -1,0 +1,6 @@
+<%= form_for element, url: { action: :create } do |f| %>
+  <%= label_tag(:name, 'Weight') %>
+  <%= f.text_field(:weight) %>
+  <%= render 'link' %>
+  <%= submit_tag 'Create' %>
+<% end %>

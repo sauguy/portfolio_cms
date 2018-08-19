@@ -1,0 +1,4 @@
+<%= form_tag new_admin_block_element_path(block), method: :get do %>
+  <%= select_tag 'element_type', options_for_select(Element::AVAILABLE_TYPES), prompt: 'Element type' %>
+  <%= submit_tag "Add element" %>
+<% end %>
